@@ -20,15 +20,12 @@ volatile char valor = 0;
 volatile char flag1 = 0;
 volatile char flag2 = 0;
 volatile char flag3 = 0; 
-volatile float flag4 = 0;
-volatile char flag5 = 0;
 
 
-// SH indica rotação no sentido hoário 
+// SH indica rotação no sentido horário 
 // AH indica sentido anti hoário
-// + indica aumento da intensidade do PWM
-// - indica diminuição da intensidade do PWM
-
+// + indica aumento velocidade motor via PWM
+// - indica redução da velocidade do motor via PWM
 
 //Raspberry Pico W
 //#define TOP 24999
@@ -147,7 +144,6 @@ static void mqtt_conectado_cb(mqtt_client_t *cliente, void *arg, mqtt_connection
 void op_pwm_mode() {
 
     static float duty_cycle = 0;
-    flag4 = duty_cycle;
     
     if(valor == 1  &&   flag2 == 1)
     {
