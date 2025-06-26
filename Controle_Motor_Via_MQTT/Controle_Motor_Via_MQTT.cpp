@@ -1,5 +1,7 @@
 // Lista 3 de exercicio IOT Eletrônica embarcada 2025
 
+// Link Repositório: https://github.com/CamargoAnderson85/Controle_Motor_Mqtt_V1
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
@@ -220,7 +222,7 @@ int main()
     sleep_ms(5000);
     printf("Connecting to Wi-Fi...\n");
 
-    if (cyw43_arch_wifi_connect_timeout_ms("jag 2g", "180579ja", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    if (cyw43_arch_wifi_connect_timeout_ms("", "", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
         printf("failed to connect.\n");
         return 1;
     } else {
